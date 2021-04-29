@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/*font*/
+
+@font-face {
+
+    font-family: “yekan”;
+
+    src: url("font/BYekan.eot");
+
+    src: url("font/BYekan.eot") format("eot"), url("font/BYekan.woff") format("woff"), url("font/BYekan.ttf") format("ttf");
+
+    font-weight: normal;
+
+    font-style: normal
+
+}
+
+
+
+
+
+
+
+
+
+/*swiper*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #1b262c;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+}
+
+body::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+    display:none;
+}
+
+
+*{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+
+
+
+.one{
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #1b262c;
+    background-size: cover;
+    background-position: center;
+}
+.me{
+    align-items: center;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 130px;
+    right: 60px;
+    border-radius: 50px;
+}
+
+header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 20px 80px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .logo{
+    top: 0px;
+    float: right;
+    position: relative;
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 800;
+
+
+}
+
+
+
+header .navigation a{
+    font-family: “yekan”, serif;
+    overflow-y: auto;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    transition: 0.8s;
+    transition-property: background;
+}
+
+header .navigation a:not(:last-child){
+    margin-right: 10px;
+}
+
+header .navigation a:hover{
+    background: #fff;
+    color: #000;
+}
+
+.content{
+    max-width: 100%;
+    margin: 60px 100px;
+}
+
+
+
+.content .info h2 span{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.content .info p{
+
+    right: 150px;
+    color: #fff;
+    margin-right: 90px;
+    text-align: right;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: “yekan”, serif;
+}
+
+
+.media-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.media-icons a{
+    position: relative;
+    color: #615252;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
+}
+
+.media-icons a:not(:last-child){
+    margin-right: 60px;
+}
+
+.media-icons .facebook:hover{
+    transform: scale(1.5);
+    color: #1e6b7f;
+}
+.media-icons .instagram:hover{
+    transform: scale(1.5);
+    color: #e41f7b;
+}
+.media-icons .whatsapp:hover{
+    transform: scale(1.5);
+    color: #81b214;
+}
+.media-icons .telegram:hover{
+    transform: scale(1.5);
+    color: #0ab0ba;
+}
+label{
+    display: none;
+}
+
+#check{
+    z-index: 3;
+    display: none;
+}
+
+/* Responsive styles */
+
+@media (max-width: 960px){
+    header .navigation{
+        display: none;
+    }
+
+    label{
+        color: #bfafaf;
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-property: color;
+    }
+
+    label:hover{
+        color: #fff;
+    }
+
+    label .close-btn{
+        display: none;
+    }
+
+    #check:checked ~ header .navigation{
+        z-index: 2;
+        position: fixed;
+        background: #1b262c;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition:all 0.5s ease-in-out;
+
+    }
+
+    #check:checked ~ header .navigation a{
+        font-weight: 700;
+        margin-right: 0;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+    }
+
+    #check:checked ~ header label .menu-btn{
+        display: none;
+    }
+
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+
+    label .menu-btn{
+        position: absolute;
+    }
+
+    header .logo{
+        position: center;
+        bottom: -6px;
+    }
+
+    .content .info h2{
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    .content .info h2 span{
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .content .info p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 560px){
+    .content .info h2{
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    .content .info h2 span{
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .content .info p{
+        font-size: 14px;
+    }
+}
+
+
+
+/*sec two*/
+
+
+
+
+/*progress*/
+
+
+
+.card {
+    display: inline-grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 150px 150px 20px;
+    grid-template-areas: "image" "text" "stats";
+
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin:30px;
+}
+.card-image {
+    grid-area: image;
+    background: url("download%20(1).jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+}
+
+.card-text {
+    grid-area: text;
+    margin: 25px;
+}
+
+.card-text p {
+    font-family: “yekan”, serif;
+    color: grey;
+    font-size:15px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+.card-text h2 {
+    font-family: font-family: 'Poppins', sans-serif;
+    margin-top:0px;
+    margin-bottom:10px;
+    font-size:28px;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+
+/*card2*/
+.card-image {
+    background: url("img/office.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+.h2-titr
+{
+    background: #1b262c;
+    font-family: “yekan”, serif;
+    text-align: center;
+    color: whitesmoke;
+    padding: 15px;
+    transition: 0.5s ease-in-out;
+
+
+
+}
+.h2-titr:hover
+{
+    background: #333642;
+}
+
+.download
+{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: black;
+    padding: 10px;
+    border-radius: 35px;
+    justify-content: space-around;
+}
+.download:hover{
+
+    background: rgba(73, 129, 132, 0.21);
+}
+/*card2*/
+.card-image.card2 {
+    background: url("img/photoshop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
+    background-position: center;
+
+
+}
+/*card3*/
+.card-image.card3 {
+    background: url("img/python.jpg");
+    background-size: cover;
+}
+
+
+/*card4*/
+.card-image.card4 {
+    background: url("img/html css .png");
+    background-size: cover;
+}
+
+/*card5*/
+.card-image.card5 {
+    background: url("img/js.png");
+    background-size: cover;
+}
+
+/*card6*/
+.card-image.card6 {
+    background: url("img/java.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/*js cert*/
+.card-image.card10
+{
+
+    background: url("img/cert-js.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*html cert*/
+.card-image.card11
+{
+
+    background: url("img/html cert.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*java cert*/
+.card-image.card12
+{
+
+    background: url("img/cert-python.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*python*/
+.card-image.card13
+{
+
+    background: url("img/cert-java.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section .scrolling-wrapper {
+    background: #1b262c;
+
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+}
+
+
+
+#container {
+    width: 100%; /* Full width */
+    background-color: #ddd; /* Grey background */
+    border-radius: 15px;
+}
+#style-2::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+#style-2::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* scrollbar itself */
+#style-2::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+#style-2::-webkit-scrollbar-button {
+    display:none;
+}
+
+/*first progress*/
+.skills {
+    text-align: center; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    font-family: font-family: 'Poppins', sans-serif;;
+    color: white; /* White text color */
+}
+.html {width: 90%; background-color: #4CAF50; border-radius: 15px;}
+
+
+/*second progress*/
+
+
+.skills1 {
+    text-align: center; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    font-family: font-family: 'Poppins', sans-serif;;
+    color: white; /* White text color */
+}
+.html1 {width: 70%; background-color: #4CAF50; border-radius: 15px;}
+
+
+/*third progress*/
+.skills2{
+    text-align: center; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    font-family: font-family: 'Poppins', sans-serif;;
+    color: white; /* White text color */
+}
+.html2 {width: 100%; background-color: #4CAF50; border-radius: 15px;}
+
+
+.skills3{
+    text-align: center; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    font-family: Roboto, serif;
+    color: white; /* White text color */
+}
+.html3 {width: 80%; background-color: #4CAF50; border-radius: 15px;}
+
+
+
+/*end progress*/
+
+
+
+/*ooter */
+
+
+
+
+.footer{
+    background: #1b262c;
+    width: auto;
+}
+
+
+
+
+.row
+{
+    justify-content:center;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+
+
+
+
+
+.containor {
+
+    left: 50%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+.containor h2{
+    font-family: “yekan”, serif;
+    width: 100%;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom:10px;
+
+}
+
+.containor .row100{
+    position: relative;
+    width: 40%;
+
+    display: flex;
+}
+
+.containor .row100 .col{
+    position: relative;
+    width: 100%;
+    padding:0 10px;
+    margin: 30px 0 10px;transition:0.5s;
+}
+
+.containor .row100 .inputBox{
+    justify-content:center;
+    position: relative;
+    width: 100%;
+    height: 40px;color: #fff;
+
+}
+.containor .row100 .inputBox input{
+    position: absolute;
+    top: 0;
+
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-color: transparent;
+    box-shadow: none;border: none;
+    outline: none;font-size:18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+    direction: ltr;
+
+
+
+}
+
+
+.containor .row100 .inputBox .text{
+    font-family: “yekan”, serif;
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: right;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+
+.containor .row100 .inputBox input:focus + .text,
+.containor .row100 .inputBox input:valid + .text
+{
+    top: -35px;
+
+
+}
+
+.containor .row100 .inputBox .line{
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+    width: 100%;
+    height:2px;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.containor .row100 .inputBox input:focus ~ .line,
+.containor .row100 .inputBox input:valid ~ .line{
+
+    height: 100%;
+}
+
+
+
+
+.con span i {
+    color: white;
+    font-size:16px;
+}
+
+.submit
+{
+    font-family: “yekan”, serif;
+    font-size:16px;
+    color: white;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.submit:hover
+{
+    background: #31464b;
+    transform: scale(1.15);
+
+}
+
+.copy{
+    font-family: sans-serif;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(38, 41, 40);
+    color: white;
+    margin-bottom: auto;
+}
+
+

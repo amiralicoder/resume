@@ -755,10 +755,6 @@ section .scrolling-wrapper {
       font-size: 15px;
       font-family: sans-serif;
   }
-
-  .card {
-    padding-right: 30px;
-  }
   .swiper-slide
   {
     margin-right: 150px !important;

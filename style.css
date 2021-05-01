@@ -749,5 +749,20 @@ section .scrolling-wrapper {
     color: white;
     margin-bottom: auto;
 }
+@media (max-width: 700px){
+
+  .content .info p{
+      font-size: 15px;
+      font-family: sans-serif;
+  }
+
+  .card {
+    padding-right: 30px;
+  }
+  .swiper-slide
+  {
+    margin-right: 150px !important;
+  }
+}
 
 
